@@ -1,5 +1,5 @@
 
-## The Graphy Assignment (Movie Searching Application)
+## The NeoKred Assignment 
 This is a web application that allows users to regiter , login and get profile details
 
 ## Routes
