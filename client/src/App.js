@@ -4,6 +4,7 @@ import "./App.css";
 import Signup from "./comoponents/Signup";
 import ProtectedRoutes from "./ProtestedRoutes";
 import Login from "./comoponents/Login";
+import Profile from "./comoponents/Profile";
 
 
 
@@ -12,9 +13,9 @@ function App() {
 
     <Routes>
         <Route path="/login"  element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/register" element={<Signup />} />
       <Route path="/" element={<ProtectedRoutes />}>
-        <Route path="/" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
 

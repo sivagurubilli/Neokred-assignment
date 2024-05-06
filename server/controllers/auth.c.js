@@ -73,12 +73,14 @@ getCurrentDateAndTime = () => {
       user = JSON.parse(JSON.stringify(user));
       if (!user) throw { status: 404, message: "No account found!" };
       else {
+        let  { token, expiryTime } =generateAccessToken(user)
         res.status(200).send({
           status: 1, success: true, message: "Login successfull",
           data: {
             userId: user._id,
             emailAddress: user.emailAddress,
-            accessToken : generateAccessToken(user)
+            accessToken : token,
+            expiryTime:expiryTime
           }
         })
       }

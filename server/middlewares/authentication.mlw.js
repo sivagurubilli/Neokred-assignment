@@ -4,9 +4,12 @@ let  User = require('../models/user.m')
 
 
 exports.generateAccessToken = (data) => {
-    let token = jwt.sign({ id: data._id }, privateKey, { expiresIn: 60 * 5 }); //2 months in seconds
-    return token
+    let token = jwt.sign({ id: data._id }, privateKey, { expiresIn: 60 * 5 }); // 5 minutes in seconds
+    let expiryTime = new Date(Date.now() + 60 * 5 * 1000); // Calculate expiry time, 5 minutes from now
+
+    return { token, expiryTime };
 }
+
 
 
 //Verification setup for the provided token of User
