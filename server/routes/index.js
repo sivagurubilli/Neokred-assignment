@@ -11,9 +11,9 @@ let {
 let  {  registrationValidations,loginValidations} = require("../validations/registration.validation")
 let {isValidPostMethod,isValidGetMethod} = require("../middlewares/validatemethods")
 
-router.route('/api/signup').all(isValidPostMethod).post(registrationValidations, register);
+router.route('/api/register').all(isValidPostMethod).post(registrationValidations, register);
 router.route('/api/login').all(isValidPostMethod).post(loginValidations, login);
-router.route('/api/get-profile').all(isValidGetMethod).get( validateUserAccessToken,getProfile);
+router.route('/api/profile').all(isValidGetMethod).get( validateUserAccessToken,getProfile);
 
 
 //Route not found error handler
