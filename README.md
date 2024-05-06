@@ -16,3 +16,4 @@ This is a web application that allows users to regiter , login and get profile d
  frontend url link - https://heroic-figolla-9788f1.netlify.app/login
  
  backend url link - https://server-6d24.onrender.com
+https://github.com/sivagurubilli/Neokred-assignment/tree/master
