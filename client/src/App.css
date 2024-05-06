@@ -470,7 +470,10 @@ a {
   height: 90vh;
   background-size: 100%;
 }
-
+.Profilebanner{
+  height: 80vh;
+  background-size: 100%;
+}
 .cookSignup {
   background-image: url("./Assets/Images/auth-banner.png");
   height: 80vh;

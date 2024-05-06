@@ -19,11 +19,11 @@ export const login = createAsyncThunk(
     }
 );
 
-export const register = createAsyncThunk(
-    "auth/register",
+export const signup = createAsyncThunk(
+    "auth/signup",
     async (item, thunkAPI) => {
         try {
-            const data = await AuthService.register(item);
+            const data = await AuthService.signup(item);
             return { user: data };
         } catch (error) {
             const message =
@@ -39,7 +39,23 @@ export const register = createAsyncThunk(
 
 
 
-
+export const getProfile = createAsyncThunk(
+    "auth/getProfile",
+    async (thunkAPI) => {
+        try {
+            const data = await AuthService.getProfile();
+            return { user: data };
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            return thunkAPI.rejectWithValue({ message });
+        }
+    }
+);
 
 
 
@@ -62,13 +78,7 @@ const authSlice = createSlice({
     initialState,
     extraReducers: {
        
-        [cookregister.rejected]: (state, action) => {
-            state.loading = false;
-            state.error = action.payload.message;
-            state.isLoggedIn = false;
-            state.user = null;
-        },
-      
+       
     },
 });
 
