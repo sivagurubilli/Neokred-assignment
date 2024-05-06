@@ -3,9 +3,9 @@
 This is a web application that allows users to regiter , login and get profile details
 
 ## Routes
-/register
-/login
-/profile
+- /register
+- /login
+- /profile
 
 
 ## Tech Stack:
